@@ -22,7 +22,7 @@ pipeline {
         sh 'docker build -t springio/gs-spring-boot-docker .'
         sh 'echo Docker Tag Image....'
         sh 'echo Docker Push Image......'
-        sh 'docker run -p 6767:6767 springio/gs-spring-boot-docker'
+        sh 'docker run -itd -p 6767:6767 springio/gs-spring-boot-docker'
       }
     }
 
