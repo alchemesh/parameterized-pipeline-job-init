@@ -19,9 +19,11 @@ pipeline {
     stage('Containerization') {
       steps {
         sh 'echo Docker Build Image..'
-        sh 'docker build -t springio/gs-spring-boot-docker .'
+        sh 'docker build -t sabatiel180/gs-spring-boot-docker:v1 .'
         sh 'echo Docker Tag Image....'
         sh 'echo Docker Push Image......'
+        sh 'docker login --username sabatiel180 --password "Poppey360!virgil"'
+        sh 'docker push sabatiel180/gs-spring-boot-docker:v1'
         sh 'docker run -itd -p 6767:6767 springio/gs-spring-boot-docker'
       }
     }
