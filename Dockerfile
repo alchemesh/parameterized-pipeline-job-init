@@ -1,4 +1,4 @@
-FROM openjdk:8-jdk-alpine
+FROM openjdk:17-alpine
 RUN addgroup -S osboxes && adduser -S osboxes -G osboxes
 USER osboxes
 ARG JAR_FILE=target/*.jar
