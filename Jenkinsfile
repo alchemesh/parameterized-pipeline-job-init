@@ -34,7 +34,7 @@ pipeline {
     
     stage('Integration Testing') {
       steps {
-        sh "sleep 10s"
+        sh "sleep 20s"
         sh 'echo Testing using cURL commands......'
         sh 'curl -s http://localhost:6767/hello'
       }
