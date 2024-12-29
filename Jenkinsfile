@@ -19,8 +19,10 @@ pipeline {
     stage('Containerization') {
       steps {
         sh 'echo Docker Build Image..'
+        sh 'docker build -t springio/gs-spring-boot-docker .'
         sh 'echo Docker Tag Image....'
         sh 'echo Docker Push Image......'
+        sh 'docker run -p 8180:8180 springio/gs-spring-boot-docker'
       }
     }
 
@@ -34,6 +36,7 @@ pipeline {
       steps {
         sh "sleep 10s"
         sh 'echo Testing using cURL commands......'
+        sh 'curl http://localhost:8180'
       }
     }
   }
