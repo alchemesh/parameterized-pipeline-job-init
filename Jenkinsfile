@@ -36,7 +36,7 @@ pipeline {
       steps {
         sh "sleep 10s"
         sh 'echo Testing using cURL commands......'
-        sh 'curl http://localhost:6767/hello'
+        sh 'curl -s http://localhost:6767/hello'
       }
     }
   }
