@@ -22,7 +22,7 @@ pipeline {
         sh 'docker build -t sabatiel180/gs-spring-boot-docker:v1 .'
         sh 'echo Docker Tag Image....'
         sh 'echo Docker Push Image......'
-        sh 'docker login --username sabatiel180 --password "Poppey360!virgil"'
+        sh 'docker login'
         sh 'docker push sabatiel180/gs-spring-boot-docker:v1'
       }
     }
